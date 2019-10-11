@@ -32,7 +32,12 @@ assertEquals(1,2);
 assertEquals(2,2);
 assertEquals("2",2);
 assertEquals("This value","This value");
-
-
+    
 // If object to be exported, write "export default ObjectName at the end of the JS"
 // If functions need to be exported, write "export" in front of each function.
+
+ export function makeEmailArr(name) {
+    let firstName = name[0].toLowerCase();
+    let lastName = name[1].toLowerCase();
+    return firstName + "." + lastName + "@evolveu.ca";
+}
