@@ -1,6 +1,18 @@
 // When import a function, the function name need to be wrapped in {}.
 //import {assertEquals} from './daily'
-import * as functions from './daily'
+import functions from './daily'
+
+test('Check the array basic', () => {
+    var cars = ["Honda", "BMW", "Toyota"];
+    var fruit = ["Apple", "Orange", "Lemon", "Banana"];
+    expect(functions.arrayFor(cars)).toBe(cars.length);
+    expect(functions.arrayWhile(fruit)).toBe(fruit.length);
+    expect(functions.arrayDoWhile(fruit)).toBe(fruit.length);
+    expect(functions.arrayForIn(fruit)).toBe("AppleOrangeLemonBanana");
+    expect(functions.arrayForOf(fruit)).toBe(fruit.length);
+}
+);
+
 
 /* 
 //Example from the stub file "functions.test.js" in project 01-getting-started
@@ -14,19 +26,18 @@ test('Check the sizes', () => {
     expect(functions.size(2000000)).toBe("large");
 }); */
 
-test ('Compare two parameters', () => {
-    expect(functions.assertEquals("a","b")).toBe(false); // expect(function()).toBe();
-    expect(functions.assertEquals("a","a")).toBe(true);
-    expect(functions.assertEquals(1,2)).toBe(false);
-    expect(functions.assertEquals(2,2)).toBe(true);
-    expect(functions.assertEquals("2",2)).toBe(false);
-    expect(functions.assertEquals("This value","This value")).toBe(true);
+test('Compare two parameters', () => {
+    expect(functions.assertEquals("a", "b")).toBe(false); // expect(function()).toBe();
+    expect(functions.assertEquals("a", "a")).toBe(true);
+    expect(functions.assertEquals(1, 2)).toBe(false);
+    expect(functions.assertEquals(2, 2)).toBe(true);
+    expect(functions.assertEquals("2", 2)).toBe(false);
+    expect(functions.assertEquals("This value", "This value")).toBe(true);
 });
 
 // In console, run "npm test daily.test.js"
 
 //Daily exercise 2
-
 
 /*
     Write a function to format an email based on an array.
