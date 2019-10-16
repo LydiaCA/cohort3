@@ -25,49 +25,53 @@ Objects / Dictionaries
     lookup key to retrieve value
  */
 
- // Inspired by https://webbjocke.com/javascript-check-data-types/
+// Inspired by https://webbjocke.com/javascript-check-data-types/
 
 // Returns if a value is really a number
-function checkNumber(number) {
-    return typeof number === 'number' && isFinite(number); 
-} 
+const functions = {
+    checkNumber: number => {
+        return (typeof number === 'number' && isFinite(number));
+    },
 
-// Returns if a value is a string
-function isString(value) {
-    return typeof value === 'string' || value instanceof String;
-}
+    // Returns if a value is a string
+    isString: value => {
+        return (typeof value === 'string' || value instanceof String);
+    },
 
-// Returns if a value is a boolean
-function isBoolean(value) {
-    return typeof value === 'boolean';
-}
 
-// Returns if a value is an array
-function isArray(value) {
-    return value && typeof value === 'object' && value.constructor === Array;
-}
+    // Returns if a value is a boolean
+    isBoolea: value => {
+        return typeof value === 'boolean';
+    },
 
-// ES5 actually has a method for this (ie9+)
-//Array.isArray(value);
+    // Returns if a value is an array
+    isArray: value => {
+        return value && typeof value === 'object' && value.constructor === Array;
+    },
 
-// Returns if a value is nulll
-function isNull(value) {
-    return value === null;
-}
+    // ES5 actually has a method for this (ie9+)
+    //Array.isArray(value);
 
-// Returns if a value is undefined
-function isUndefined(value) {
-    return typeof value === 'undefined';
-}
+    // Returns if a value is nulll
+    isNull: value => {
+        return value === null;
+    },
 
-// Returns if a value is a function
-function isFunction(value) {
-    return typeof value === 'function';
-}
+    // Returns if a value is undefined
+    isUndefined: value => {
+        return typeof value === 'undefined';
+    },
 
-// Returns if a value is an object
-function isObject(value) {
-    return value && typeof value === 'object' && value.constructor === Object;
-}
+    // Returns if a value is a function
+    isFunction: value => {
+        return typeof value === 'function';
+    },
 
-export default checkNumber;
+    // Returns if a value is an object
+    isObject: value => {
+        return value && typeof value === 'object' && value.constructor === Object;
+    }
+
+
+};
+export default functions;
