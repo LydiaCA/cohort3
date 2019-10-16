@@ -29,7 +29,8 @@ Objects / Dictionaries
 
 // Returns if a value is really a number
 const functions = {
-    checkNumber: number => {
+    
+    isNumber: number => {
         return (typeof number === 'number' && isFinite(number));
     },
 
@@ -40,7 +41,7 @@ const functions = {
 
 
     // Returns if a value is a boolean
-    isBoolea: value => {
+    isBoolean: value => {
         return typeof value === 'boolean';
     },
 
@@ -70,8 +71,27 @@ const functions = {
     // Returns if a value is an object
     isObject: value => {
         return value && typeof value === 'object' && value.constructor === Object;
-    }
+    },
 
+    // Return trun if a value is bigger than true, otherwise false.
+    isBiggerThanZero: value => {
+        if (value > 0) return true;
+        return false;
+    },
+
+    addValuetoFrontArray: (inputArray, value) => {
+         inputArray.unshift(value);
+         return inputArray;
+    },
+
+    updateValueofArray: (inputArray, value) => {
+        updateValueofArray.unshift(value);
+        return updateValueofArray;
+   },
+    addValuetoEndArray: (inputArray, value) => {
+        inputArray.push(value);
+        return inputArray;
+   },
 
 };
 export default functions;
