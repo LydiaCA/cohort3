@@ -2,6 +2,16 @@
 //import {assertEquals} from './daily'
 import functions from './daily'
 
+test('Check for More Array Work - October 16-17', () => {
+    var cars = ["Honda", "BMW", "Toyota"];
+    var fruit = ["Apple", "Orange", "Lemon", "Banana"];
+    expect(functions.arraySlice(cars,1)).toEqual(["BMW", "Toyota"]);
+    // expect(functions.arraySplice(2, 0, "Pear", "Grape")).toBe(["Apple", "Orange", "Lemon", "Pear", "Grape", "Banana"]);
+    var numbers = [64, 49, 16, 4];
+    expect(functions.arrayForEach(cars)).toEqual(["Honda-", "BMW-", "Toyota-"]); 
+    expect(functions.arraryMap(numbers)).toEqual([8, 7, 4, 2]);
+});
+
 test('Check the array basic', () => {
     var cars = ["Honda", "BMW", "Toyota"];
     var fruit = ["Apple", "Orange", "Lemon", "Banana"];
@@ -9,7 +19,7 @@ test('Check the array basic', () => {
     expect(functions.arrayWhile(fruit)).toBe(fruit.length);
     expect(functions.arrayDoWhile(fruit)).toBe(fruit.length);
     expect(functions.arrayForIn(fruit)).toBe("AppleOrangeLemonBanana");
-    expect(functions.arrayForOf(fruit)).toBe(fruit.length);
+    expect(functions.arrayForOf(fruit)).toBe("AppleOrangeLemonBanana");
 }
 );
 
