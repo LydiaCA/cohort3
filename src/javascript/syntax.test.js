@@ -42,12 +42,32 @@ test('Check if-else statement', () => {
 
 test('Add value to the front of array', () => {
     var cars = ["CHRYSLER", "BMW", "HONDA"];
-    //expect(functions.addValuetoFrontArray(cars, "Toyota")).toBe(typeof cars);
-    //expect(functions.addValuetoFrontArray(cars, "Toyota")).toBe(["CHRYSLER", "BMW", "HONDA", "Toyota"]);
-    functions.addValuetoFrontArray(cars, "Toyota");
-    functions.addValuetoEndArray(cars, "Volve");
-    
+    expect(functions.addValuetoFrontArray(cars, "Toyota")).toEqual(["Toyota", "CHRYSLER", "BMW", "HONDA"]);
+})
+
+test('Add value to the end of array', () => {
+    var cars = ["CHRYSLER", "BMW", "HONDA"];
+    expect(functions.addValuetoEndArray(cars, "Volve")).toEqual(["CHRYSLER", "BMW", "HONDA", "Volve"]);
+})
+
+test('Update value of the array', () => {
+    var cars = ["CHRYSLER", "BMW", "HONDA"];
+    expect(functions.updateValueofArray(cars, 0, "Replaced Car")).toEqual(["Replaced Car", "BMW", "HONDA"]);
+})
+
+test('Check the array basic', () => {
+    var cars = ["Honda", "BMW", "Toyota"];
+    var fruit = ["Apple", "Orange", "Lemon", "Banana"];
+    expect(functions.arrayForLoop(cars)).toBe(cars.length);
+    expect(functions.arrayWhile(fruit)).toBe(fruit.length);
+    expect(functions.arrayDoWhile(fruit)).toBe(fruit.length);
+    expect(functions.arrayForInLoop(fruit)).toBe("AppleOrangeLemonBanana");
+    expect(functions.arrayForOfLoop(fruit)).toBe("AppleOrangeLemonBanana");
+    expect(functions.arrayForEachLoop(fruit)).toBe("AppleOrangeLemonBanana");
 }
+);
 
-)
-
+test('Check with Objects', () => {
+    var cars = {name:"CHRYSLER", model: "300", year: "2006"};
+    expect(functions.checkObject(cars)).toEqual("CHRYSLER-300-2006");
+})

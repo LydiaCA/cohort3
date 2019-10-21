@@ -29,7 +29,7 @@ Objects / Dictionaries
 
 // Returns if a value is really a number
 const functions = {
-    
+
     isNumber: number => {
         return (typeof number === 'number' && isFinite(number));
     },
@@ -80,18 +80,82 @@ const functions = {
     },
 
     addValuetoFrontArray: (inputArray, value) => {
-         inputArray.unshift(value);
-         return inputArray;
+        inputArray.unshift(value);
+        return inputArray;
+    },
+
+    addValuetoEndArray: (inputArray, value) => {
+        inputArray.push(value);
+        return inputArray;
     },
 
     updateValueofArray: (inputArray, value) => {
         updateValueofArray.unshift(value);
         return updateValueofArray;
-   },
-    addValuetoEndArray: (inputArray, value) => {
-        inputArray.push(value);
-        return inputArray;
-   },
+    },
 
-};
+    updateValueofArray: (inputArray, index, newValue) => {
+        inputArray[index] = newValue;
+        return inputArray;
+    },
+
+    arrayForLoop: (inputArray) => {
+        var length = 0;
+        for (var i = 0; i < inputArray.length; i++) {
+            length++;
+        }
+        return length;
+    },
+
+    arrayWhile: (inputArray) => {
+        var j = 0;
+        while (j < inputArray.length) {
+            j++;
+        }
+        return j;
+    },
+
+    arrayDoWhile: (inputArray) => {
+        var i = 0;
+        do {
+            i++;
+        } while (i < inputArray.length)
+        return i;
+    },
+
+    arrayForInLoop: (inputArray) => {
+        var string1 = "";
+        for (var property1 in inputArray) {
+            string1 += inputArray[property1];
+        }
+        //console.log("string1 is: " + string1);
+        return string1;
+    },
+
+    arrayForOfLoop: (arrayEntities) => {
+        var string1 = "";
+        for (let eachItem of arrayEntities) {
+            string1 += eachItem;
+            //console.log("string1 is: " + string1);
+        }
+        return string1;
+    },
+
+    arrayForEachLoop: (inputArray) => {
+        var string1 = "";
+        inputArray.forEach(function (eachItem) {
+            string1 += eachItem;
+        });
+        return string1;
+    },
+
+
+    checkObject: (inputObject) => {
+        var string1 = "";
+        inputObject.forEach(function (eachItem) {
+            string1 += eachItem;
+        }
+        )
+    }
+}
 export default functions;
