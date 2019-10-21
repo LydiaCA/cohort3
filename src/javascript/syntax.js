@@ -152,10 +152,11 @@ const functions = {
 
     checkObject: (inputObject) => {
         var string1 = "";
-        inputObject.forEach(function (eachItem) {
-            string1 += eachItem;
+        for (var property in inputObject) {
+            string1 += (inputObject[property] + "-");
         }
-        )
+       var returnedString = string1.slice(0, string1.length-1);
+        return returnedString; //remove the last char "-".
     }
 }
 export default functions;
