@@ -1,13 +1,52 @@
 const functions = {
+    /* More Array Exercises - October 29, 2019 */
+    loopStaffTotalBalance: (arrStaff) => {
+        let arrTotalBalance = [];
+        for (let element of arrStaff) {
+            arrTotalBalance.push(element.balance);
+        };
+        let totalBalance = arrTotalBalance.reduce(function myFunc(total, num) {
+            return total + num;
+        });
+        return totalBalance;
+    },
+
+    AverageBalance: (arrStaff) => {
+        let arrTotalBalance = [];
+        for (let element of arrStaff) {
+            arrTotalBalance.push(element.balance);
+        };
+        let totalBalance = arrTotalBalance.reduce(function myFunc(total, num) {
+            return total + num;
+        });
+        return parseInt(totalBalance / arrTotalBalance.length);
+    },
+
+    loopStaffForEach: (arrStaff) => {
+        let newArr = [];
+        arrStaff.forEach(function (item) { newArr.push(functions.makeEmailObj(item)); });
+        return newArr;
+    },
+
+
+    loopStaffMap: (arrStaff) => {
+        return arrStaff.map(x => functions.makeEmailObj(x));
+    },
 
     loopStaffIn: (arrStaff) => {
-        const arrEmail0 = [];
-        for (let staff in arrStaff) {
-            console.log("functions.makeEmailObj[staff] is: " + functions.makeEmailObj(staff));
-            arrEmail0.push(functions.makeEmailObj(staff));
+        const arrEmail01 = [];
+        for (let index in arrStaff) {
+            arrEmail01.push(functions.makeEmailObj(arrStaff[index]));
         }
-        console.log("arrEmail0 is: " + arrEmail0);
-        return arrEmail0;
+        return arrEmail01;
+    },
+
+    loopStaffOf: (arrStaff) => {
+        const arrEmail00 = [];
+        for (let eachItem of arrStaff) {
+            arrEmail00.push(functions.makeEmailObj(eachItem));
+        };
+        return arrEmail00;
     },
 
     //     const arrEmail = arrStaff.map((item) => {
@@ -21,7 +60,6 @@ const functions = {
         const arrEmail = arrStaff.map((item) => {
             return functions.makeEmailObj(item)
         });
-        console.log("arrEmail in loopStaff is: " + arrEmail);
         return arrEmail;
     },
 
@@ -46,40 +84,36 @@ const functions = {
 
     arrayReduce: (inputArray) => {
         let addup = inputArray.reduce(myFunc);
-        // function function1(acc, item, index, inputArray) {
-        //     return acc - item;
-        // }
-
         function myFunc(total, num) {
-            return total - num;
+            return total + num;
         }
         return addup;
     },
 
+    arrayFilter: (inputArray) => {
+        // let addup = inputArray.reduce(myFunc);
+        // function myFunc(total, num) {
+        //     return total + num;
+        // }
+        return inputArray.filter((e) => { return e > 2 });
+    },
+
+    arraySort: (inputArray) => {
+        return inputArray.sort();
+    },
+
 
     //=== Prepare for Array Work - October 15, 2019 ===//
-
-    /*Let’s dig deeper into arrays. Read the documentation on the following and create examples of each one:
-    
-    Basics
-        for
-        while
-        do while
-    Next Level
-        for in
-        for of
-    */
-
     arrayFor: (inputArray) => {
-        var length = 0;
-        for (var i = 0; i < inputArray.length; i++) {
+        let length = 0;
+        for (let i = 0; i < inputArray.length; i++) {
             length++;
         }
         return length;
     },
 
     arrayWhile: (inputArray) => {
-        var j = 0;
+        let j = 0;
         while (j < inputArray.length) {
             j++;
         }
@@ -87,7 +121,7 @@ const functions = {
     },
 
     arrayDoWhile: (inputArray) => {
-        var i = 0;
+        let i = 0;
         do {
             i++;
         } while (i < inputArray.length)
@@ -95,15 +129,15 @@ const functions = {
     },
 
     arrayForIn: (inputArray) => {
-        var string1 = "";
-        for (var property1 in inputArray) {
+        let string1 = "";
+        for (let property1 in inputArray) {
             string1 += inputArray[property1];
         }
         return string1;
     },
 
     arrayForOf: (arrayEntities) => {
-        var string1 = "";
+        let string1 = "";
         for (let eachItem of arrayEntities) {
             string1 += eachItem;
         };
@@ -118,13 +152,7 @@ const functions = {
     //=== makeEmailObj - Oct 11, 2019 ===//
 
     makeEmailObj: (name) => {
-        console.log("first name is: " + name.fname);
-        let firstName = name.fname.toLowerCase();
-        let lastName = name.lname.toLowerCase();
-        //let emailAddress = name.fname.toLowerCase() + "." + name.lname.toLowerCase() + "@evolveu.ca";
-        let emailAddress = firstName + "." + lastName + "@evolveu.ca";
-        console.log("emailAddress is: " + emailAddress);
-        return emailAddress;
+        return name.fname.toLowerCase() + "." + name.lname.toLowerCase() + "@evolveu.ca";
     },
 
     //=== makeEmailArr - October 9, 2019 ===//

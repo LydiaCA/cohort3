@@ -1,19 +1,53 @@
-// When import a function, the function name need to be wrapped in {}.
-//import {assertEquals} from './daily'
+// When import a specific function, the function nam needs to be wrapped in {}.
+// e.g. import {assertEquals} from './daily'
 import functions from './daily'
+/* More Array Exercises - October 29, 2019 */
+
+// Use only the JavaScript built-in functions listed below to complete 
+// this exercise. Make sure you write your tests first.
+
+// write a function to receive the same array (staff) and return 
+// the total of balances
+// write a function to receive the same array (staff) and return 
+// the average the balances
+test('Total the balance', () => {
+    expect(functions.loopStaffTotalBalance(data.staff))
+        .toEqual(3823);
+
+});
+
+test('Average the balance', () => {
+    expect(functions.AverageBalance(data.staff))
+        .toEqual(546);
+
+});
+
+/* loopStaff each / map - October 25, 2019 */
+// Do the same assignment again, but this time use callback functions. 
+//Use the ‘forEach’ and ‘map’ built-in functions.
+test('email builder for company02', () => {
+    const staffEmail03 = functions.loopStaffForEach(data.staff);
+    expect(staffEmail03[4])
+        .toEqual("noah.ho@evolveu.ca");
+    const staffEmail04 = functions.loopStaffMap(data.staff);
+    expect(staffEmail04[6])
+        .toEqual("benjamin.amis@evolveu.ca");
+});
+
+
 
 /* loopStaff: in / of - October 24, 2019 */
 //Do the same assignment as the last one using the two forms of the “for” statement. 
 //Create your own tests but use the function names that are provided below.
-/* 
-test('email builder for company01', () => {
+
+test('email builder for company array for-in/of', () => {
     const staffEmail01 = functions.loopStaffIn(data.staff);
-    // Write your tests here
     expect(staffEmail01[0])
         .toEqual("jane.smith@evolveu.ca");
-    //const staffEmail2 = functions.loopStaffOf(data.staff);
-    // Write your tests here
-}); */
+    const staffEmail02 = functions.loopStaffOf(data.staff);
+    expect(staffEmail02[3])
+        .toEqual("olivia.notly@evolveu.ca");
+});
 
 
 
@@ -58,28 +92,37 @@ test('email builder for company00', () => {
 test('Check for More Array Work - October 16-17', () => {
     let cars = ["Honda", "BMW", "Toyota"];
     let fruit = ["Apple", "Orange", "Lemon", "Banana"];
-    expect(functions.arraySlice(cars,1)).toEqual(["BMW", "Toyota"]);
+    expect(functions.arraySlice(cars, 1)).toEqual(["BMW", "Toyota"]);
     // expect(functions.arraySplice(2, 0, "Pear", "Grape")).toBe(["Apple", "Orange", "Lemon", "Pear", "Grape", "Banana"]);
     let numbers = [64, 49, 16, 4];
-    expect(functions.arrayForEach(cars)).toEqual(["Honda-", "BMW-", "Toyota-"]); 
+    expect(functions.arrayForEach(cars)).toEqual(["Honda-", "BMW-", "Toyota-"]);
     expect(functions.arrayMap(numbers)).toEqual([8, 7, 4, 2]);
 });
 
+//=== Prepare for Array Work - October 15, 2019 ===//
+
+/*Let’s dig deeper into arrays. Read the documentation on the following and create examples of each one:
+ 
+Basics
+    for
+    while
+    do while
+Next Level
+    for in
+    for of
+*/
 test('Check the array basic', () => {
     let cars = ["Honda", "BMW", "Toyota"];
     let fruit = ["Apple", "Orange", "Lemon", "Banana"];
-    let numbers = [1,2,3,4];
+    let numbers = [4, 2, 3, 1];
     expect(functions.arrayFor(cars)).toBe(cars.length);
     expect(functions.arrayWhile(fruit)).toBe(fruit.length);
     expect(functions.arrayDoWhile(fruit)).toBe(fruit.length);
     expect(functions.arrayForIn(fruit)).toBe("AppleOrangeLemonBanana");
     expect(functions.arrayForOf(fruit)).toBe("AppleOrangeLemonBanana");
-    // expect(functions.arrayReduce(numbers)).toBe([2,4,6,8]);
-
-    expect(functions.arrayReduce([175, 50, 25])).toBe(100);
-
-    
-    
+    expect(functions.arrayReduce(numbers)).toBe(10);
+    expect(functions.arrayFilter(numbers)).toStrictEqual([4,3]);
+    expect(functions.arraySort(numbers)).toStrictEqual([1, 2, 3, 4]);
 });
 
 
