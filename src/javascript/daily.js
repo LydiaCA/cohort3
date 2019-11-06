@@ -1,4 +1,14 @@
 const functions = {
+    /* More Array Exercises (Really) - November 6, 2019 */
+    filterBalance: (arrStaff) => {
+        return arrStaff.filter((e) => {return e.balance >= 1000});
+    },
+
+    /* Pointers Reference Exercises November 5, 2019 */
+    addThree: (thing) => {
+        thing.bal = thing.bal + 3;
+    },
+
     /* More Array Exercises - October 29, 2019 */
     loopStaffTotalBalance: (arrStaff) => {
         let arrTotalBalance = [];
@@ -34,6 +44,7 @@ const functions = {
     },
 
     loopStaffIn: (arrStaff) => {
+    //console.log("In loopStaffIn(), arrStaff is: " + arrStaff);
         const arrEmail01 = [];
         for (let index in arrStaff) {
             arrEmail01.push(functions.makeEmailObj(arrStaff[index]));

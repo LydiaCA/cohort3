@@ -1,6 +1,41 @@
 // When import a specific function, the function nam needs to be wrapped in {}.
 // e.g. import {assertEquals} from './daily'
 import functions from './daily'
+/* More Array Exercises (Really) - November 6, 2019 */
+test('Get staff info whose balance >= 1000 with array', () => {
+    functions.filterBalance(data.staff);
+    expect(functions.filterBalance(data.staff)).toStrictEqual([{ fname: 'Liam', lname: 'Henry', balance: 1000 }, { fname: 'Emma', lname: 'Jones', balance: 1330 }]);
+});
+
+
+/* Pointers Reference Exercises November 5, 2019 */
+test('How do pointers work', () => {
+    //console.log("Reference");
+    const a = { "name": "Larry", "bal": 10 };
+    const arr = [];
+    const obj = {};
+    arr.push(a);
+    obj[a.name] = a;
+
+    expect(a.bal).toBe(10); //primitive 
+    expect(arr[0].bal).toBe(10); //reference
+    expect(obj[a.name].bal).toBe(10); //reference
+    expect(obj.Larry.bal).toBe(10); //reference
+
+    a.bal += 1;
+    expect(a.bal).toBe(11);
+    expect(arr[0].bal).toBe(11);
+    expect(obj[a.name].bal).toBe(11);
+    expect(obj.Larry.bal).toBe(11);
+
+    functions.addThree(a);
+    expect(a.bal).toBe(14);
+    expect(arr[0].bal).toBe(14);
+    expect(obj[a.name].bal).toBe(14);
+    expect(obj.Larry.bal).toBe(14);
+});
+
+
 /* More Array Exercises - October 29, 2019 */
 
 // Use only the JavaScript built-in functions listed below to complete 
@@ -80,7 +115,6 @@ const data = {
 
 test('email builder for company00', () => {
     const staffEmail = functions.loopStaff(data.staff);
-    console.log("staffEmail is: " + staffEmail);
     expect(staffEmail[0])
         .toEqual("jane.smith@evolveu.ca");
     expect(staffEmail[3])
@@ -121,7 +155,7 @@ test('Check the array basic', () => {
     expect(functions.arrayForIn(fruit)).toBe("AppleOrangeLemonBanana");
     expect(functions.arrayForOf(fruit)).toBe("AppleOrangeLemonBanana");
     expect(functions.arrayReduce(numbers)).toBe(10);
-    expect(functions.arrayFilter(numbers)).toStrictEqual([4,3]);
+    expect(functions.arrayFilter(numbers)).toStrictEqual([4, 3]);
     expect(functions.arraySort(numbers)).toStrictEqual([1, 2, 3, 4]);
 });
 
