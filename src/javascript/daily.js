@@ -1,7 +1,28 @@
 const functions = {
+    /* Callback Exercise (Part 1) - November 8, 2019 */
+    filterPeopleByProvince: (arrCollection, strProvinceName) => {
+        return arrCollection.filter((e) => { return e.province === strProvinceName });
+    },
+
+    filterPeopleByMultiProvinces: (arrCollection, arrProvinceName) => {
+        let arrPeople = [];
+        console.log("How many inquery provinces? " + arrProvinceName.length);
+        for (let i = 0; i < arrProvinceName.length; i++)
+            arrPeople.push(arrCollection.filter((e) => { return e.province === arrProvinceName[i] }));
+        arrPeople = arrPeople[0].concat(arrPeople[1]);
+        console.log(arrPeople);
+        return arrPeople;
+    },
+
+    fullName: (arrCollection) => {
+        let newArr = [];
+        arrCollection.forEach(function (item) { newArr.push(item.fname + " " + item.lname); });
+        return newArr;
+    },
+
     /* More Array Exercises (Really) - November 6, 2019 */
     filterBalance: (arrStaff) => {
-        return arrStaff.filter((e) => {return e.balance >= 1000});
+        return arrStaff.filter((e) => { return e.balance >= 1000 });
     },
 
     /* Pointers Reference Exercises November 5, 2019 */
@@ -44,7 +65,7 @@ const functions = {
     },
 
     loopStaffIn: (arrStaff) => {
-    //console.log("In loopStaffIn(), arrStaff is: " + arrStaff);
+        //console.log("In loopStaffIn(), arrStaff is: " + arrStaff);
         const arrEmail01 = [];
         for (let index in arrStaff) {
             arrEmail01.push(functions.makeEmailObj(arrStaff[index]));
