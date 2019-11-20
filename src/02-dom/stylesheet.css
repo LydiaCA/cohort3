@@ -22,4 +22,50 @@ ol {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    justify-content: center;
   }
+
+.panel-primary{
+    float: center;
+    width: 88%;
+    display: inline-block;
+    background: #ffffff;
+    box-shadow:0 2px 6px #000;
+    margin: 25px;
+    padding: 50px;
+}
+
+.left-panel{
+    float: left;
+    width: 40%;
+    display: inline-block;
+    background: #ffffff;
+    box-shadow:0 2px 6px #000;
+    margin: 10px;
+    padding: 10px;
+    display: block;
+}
+
+.right-panel{
+    float: right;
+    width: 40%;
+    display: inline-block;
+    background: #ffffff;
+    box-shadow:0 2px 6px #000;
+    margin: 10px;
+    padding: 10px;    
+}
+
+#buttonDiv {
+    margin:auto;
+    display:block;
+}
+
+.card {
+    display: inline-block;
+    background: #ffffff;
+    box-shadow:0 2px 6px #000;
+    margin: 10px;
+    padding: 10px;
+    display:block;
+}

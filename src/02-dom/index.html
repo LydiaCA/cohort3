@@ -11,17 +11,44 @@
 
 <body>
     <div class="main">
-    <h1> Basic DOM</h1>
-        <ul id="idUl">This is a list of stuff
+        <h1> Basic DOM</h1>
+        <ol id="idOl">This is a list of stuff
             <li value="1">Item 1</li>
             <li value="2">Item 2</li>
             <li value="3">Item 3</li>
-        </ul>
+        </ol>
         <button class="button" type="button" id="idShow" value="Show">Show</button>
         <button class="button" type="button" id="idAdd" value="Add">Add</button>
     </div>
     <span id="idMessage"></span>
-    
+
+    <hr>
+
+    <div class="panel-primary">
+        <h1> Working with Cards </h1>
+        <div class="left-panel" id="idleftPanel">
+            <p>Left Panel</p>
+            <div id="buttonDiv">
+            <button class="button" type="button" id="idAddCard">Add Card</button>
+
+            <div class="card" count="56">
+                <bold>Card 1</bold><br>
+                <button  class="button" type="button" id="idAddBefore">Add Before</button>
+                <button class="button" type="button" id="idAddAfter">Add After</button><br>
+                <button class="button" type="button" id="idDelete">Delete</button><br>
+            </div>                
+
+            </div>
+        </div>
+        <div class="right-panel">
+        Right-panel goels here
+        </div>
+    </div>
+
+
+
+    </div>
+
     <script type="module" src="./scripts/main.js"></script>
 </body>
 
