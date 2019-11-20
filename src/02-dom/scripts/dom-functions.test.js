@@ -33,7 +33,7 @@ test("Actions with Cards", () => {
 
     console.log("in the test", leftPanelDiv.childNodes.length);
     console.log("in the test", childDiv.getAttribute("count"));
-    functions.addCards(leftPanelDiv);
-    // expect(leftPanelDiv.childern.length).toBe(2);
+    functions.getCounter(leftPanelDiv);
+    expect(leftPanelDiv.childern.length).toBe(2);
 
 })

@@ -15,7 +15,7 @@ ol {
 
 .button {
     background-color: #4CAF50; /* Green */
-    border: none;
+    border: 1px;
     color: white;
     padding: 5px 18px;
     text-align: center;
@@ -23,6 +23,7 @@ ol {
     display: inline-block;
     font-size: 16px;
     justify-content: center;
+    margin: 2px 0;
   }
 
 .panel-primary{
@@ -44,6 +45,7 @@ ol {
     margin: 10px;
     padding: 10px;
     display: block;
+    text-align: center;
 }
 
 .right-panel{
@@ -53,7 +55,8 @@ ol {
     background: #ffffff;
     box-shadow:0 2px 6px #000;
     margin: 10px;
-    padding: 10px;    
+    padding: 10px;  
+    text-align: center;  
 }
 
 #buttonDiv {
