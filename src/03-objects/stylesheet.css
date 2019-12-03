@@ -20,7 +20,6 @@ ol {
   height: 300px;
   margin: 0 auto;
   text-align: center;
-  adding-bottom: 50px;
 }
 
 .button {
@@ -38,7 +37,6 @@ ol {
 }
 
 .panel-primary {
-  float: center;
   width: 88%;
   display: inline-block;
   background: #ffffff;
@@ -50,7 +48,6 @@ ol {
 }
 
 .left-panel {
-  float: left;
   width: 40%;
   display: inline-block;
   background: #ffffff;
@@ -73,6 +70,10 @@ ol {
   padding: 10px;
   text-align: center;
   height: 100vh;
+}
+
+.cardText{
+  
 }
 
 #buttonDiv {
