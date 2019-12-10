@@ -7,7 +7,6 @@ class MyComp extends React.Component {
 				<div>
 					<h1>Hello World from MyComp</h1>
 					<button onClick={this.props.onPushMe}>Push Me</button>
-					<p></p>
 				</div>
 			)
 		}
