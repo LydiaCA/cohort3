@@ -9,6 +9,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.counter = 21;
+    this.theShowPage = <OddComponent />;
 
     this.state = {
       myState: "TBD"
@@ -24,14 +25,20 @@ class App extends React.Component {
     this.setState({
       myState: "now:" + this.counter
     });
+
+    if(Math.abs(this.counter % 2) === 1 ) {
+      this.theShowPage = <OddComponent />;
+    } else { 
+      this.theShowPage = <EvenComponent />;
+    }
   }
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>I am in control of this application and my name is Lydia {this.counter} {this.state.myState}</h1>
           <img src={logo} className="App-logo" alt="logo" />
+          <h1>I am in control of this application and my name is Lydia {this.counter} {this.state.myState}</h1>
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
@@ -46,8 +53,7 @@ class App extends React.Component {
         </header>
         <button onClick={this.onPushMe}>Push Me</button>
         <MyComponent whatToSay={"What Ever"} onPushMe={this.onPushMe}/>
-        <EvenComponent />
-        <OddComponent />
+        {this.theShowPage}
       </div>
     );
   }

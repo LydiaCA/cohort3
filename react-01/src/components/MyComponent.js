@@ -2,7 +2,7 @@ import React from 'react';
 
 class MyComp extends React.Component {
 	render() {
-		console.log(this.props.whatToSay);
+		console.log("whatToSay in MyComp: ",this.props.whatToSay);
 			return (
 				<div>
 					<h1>Hello World from MyComp</h1>
