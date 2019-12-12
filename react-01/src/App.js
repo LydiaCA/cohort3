@@ -4,6 +4,7 @@ import './App.css';
 import MyComponent from './components/MyComponent';
 import EvenComponent from './components/EvenComponent';
 import OddComponent from './components/OddComponent';
+import SVGComponent from './components/SVGComponent';
 
 class App extends React.Component {
   constructor() {
@@ -36,6 +37,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <SVGComponent />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1>I am in control of this application and my name is Lydia {this.counter} {this.state.myState}</h1>
