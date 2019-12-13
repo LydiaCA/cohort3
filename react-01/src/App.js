@@ -10,8 +10,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.counter = 21;
-    this.theShowPage = <OddComponent />;
-
+    
     this.state = {
       myState: "TBD"
     };
@@ -27,14 +26,18 @@ class App extends React.Component {
       myState: "now:" + this.counter
     });
 
-    if(Math.abs(this.counter % 2) === 1 ) {
-      this.theShowPage = <OddComponent />;
-    } else { 
-      this.theShowPage = <EvenComponent />;
-    }
+
   }
 
   render() {
+    let theShowPage;
+
+    if(Math.abs(this.counter % 2) === 1 ) {
+      theShowPage = <OddComponent />;
+    } else { 
+      theShowPage = <EvenComponent />;
+    }
+
     return (
       <div className="App">
         <SVGComponent />
@@ -55,7 +58,7 @@ class App extends React.Component {
         </header>
         <button onClick={this.onPushMe}>Push Me</button>
         <MyComponent whatToSay={"What Ever"} onPushMe={this.onPushMe}/>
-        {this.theShowPage}
+        {theShowPage}
       </div>
     );
   }
