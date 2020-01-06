@@ -8,7 +8,6 @@ import SVGComponent from './components/SVGComponent';
 class App extends React.Component {
   constructor() {
     super();
-
     this.state = {
       myState: "TBD",
       theShowPage: ""
@@ -24,7 +23,10 @@ class App extends React.Component {
   //   this.setState({
   //     myState: "now:" + this.counter
   //   });
-  // }
+  // }np
+  handleIconClick =(id) => {
+    console.log(id);
+  }
 
   render() {
     // let theShowPage;
@@ -38,7 +40,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <SVGComponent />
+        <SVGComponent onClick={this.handleIconClick}/>
 
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
