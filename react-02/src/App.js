@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './images/logo.svg';
 import './App.css';
 // import MyComponent from './components/MyComponent';
-import TictactoeComp from './components/TictactoeComponent';
+// import TictactoeComp from './components/TictactoeComponent';
 import SVGComponent from './components/SVGComponent';
 
 class App extends React.Component {
@@ -15,18 +15,16 @@ class App extends React.Component {
     };
   }
 
-  onPushMe = () => {
-    console.log("You pushed me");
+  // onPushMe = () => {
+  //   console.log("You pushed me");
 
-    this.counter++;
-    console.log("counter is: ", this.counter);
+  //   this.counter++;
+  //   console.log("counter is: ", this.counter);
 
-    this.setState({
-      myState: "now:" + this.counter
-    });
-
-
-  }
+  //   this.setState({
+  //     myState: "now:" + this.counter
+  //   });
+  // }
 
   render() {
     // let theShowPage;
