@@ -81,14 +81,6 @@ class SVGComponent extends React.Component {
   render() {
     return (
       <div>
-        {/* <img src={imagereact} className="rotate" id="idPenguin1" alt="Christmast Pegiun" width="120" height="120"/>
-				<img src={imageTictactoe} className="rotate" id="idPenguin2" alt="Christmast Pegiun" width="100" height="100" 
-					onClick={}/>
-
-				<img src={imagePenguin} className="rotate" id="idPenguin3" alt="Christmast Pegiun" width="120" height="120"/>
-				<img src={imagePenguin} className="rotate" id="idPenguin4" alt="Christmast Pegiun" width="120" height="120"/>
-				<img src={imagePenguin} className="rotate" id="idPenguin5" alt="Christmast Pegiun" width="120" height="120"/>
-				<img src={imagePenguin} className="rotate" id="idPenguin6" alt="Christmast Pegiun" width="120" height="120"/> */}
         {this.props.icons.map(
           ({ src, id, alt, width, onClick = this.props.onClick, height }) => (
             <Icon

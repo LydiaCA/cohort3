@@ -1,50 +1,61 @@
-import React from 'react';
-import logo from './images/logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./images/logo.svg";
+import "./App.css";
 // import MyComponent from './components/MyComponent';
-// import TictactoeComp from './components/TictactoeComponent';
-import SVGComponent from './components/SVGComponent';
+import TictactoeComp from "./components/TictactoeComponent";
+import SVGComponent from "./components/SVGComponent";
+import Welcome from "./components/Welcome";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      myState: "TBD",
-      theShowPage: ""
+      theShowPage: <Welcome />
     };
   }
 
-  // onPushMe = () => {
-  //   console.log("You pushed me");
-
-  //   this.counter++;
-  //   console.log("counter is: ", this.counter);
-
-  //   this.setState({
-  //     myState: "now:" + this.counter
-  //   });
-  // }np
-  handleIconClick =(id) => {
+  handleIconClick = id => {
     console.log(id);
-  }
+    let showComponent;
+
+    switch (id) {
+      case "idTicTacToe":
+        showComponent = <TictactoeComp />;
+        break;
+      // case "idAccount":
+      //   showComponent = <AccountComponent />;
+      //   break;
+      // case "idCities":
+      //   showComponent = <CityComponent />;
+      //   break;
+      // case "idLink":
+      //   showComponent = <LinkComponent />;
+      //   break;
+      // case "idStack":
+      //   showComponent = <StackComponent />;
+      //   break;
+      // case "idStyle":
+      //   showComponent = <StyleComponent />;
+      //   break;
+      default:
+        showComponent = <Welcome />;
+    }
+    this.setState({ theShowPage: showComponent });
+  };
 
   render() {
     // let theShowPage;
 
     // if(Math.abs(this.counter % 2) === 1 ) {
     //   theShowPage = <OddComponent />;
-    // } else { 
+    // } else {
     //   theShowPage = <EvenComponent />;
     // }
     console.log(this.state.theShowPage);
 
     return (
       <div className="App">
-        <SVGComponent onClick={this.handleIconClick}/>
-
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
+        <SVGComponent onClick={this.handleIconClick} />
         {this.state.theShowPage}
       </div>
     );

@@ -1,7 +1,7 @@
 import React from "react";
 
 const Icon = props => {
-  let { src, className = "rotate", id, alt, width, onClick, height } = props;
+  let { src, className, id, alt, width, height, onClick } = props;
   return (
     <img
       src={src}
