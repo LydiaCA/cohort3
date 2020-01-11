@@ -69,13 +69,13 @@ class SVGComponent extends React.Component {
   constructor() {
     super();
     this.state = {
-      theShowPage: ""
+      // theShowPage: ""
     };
   }
 
   changeShowPage = () => {
     console.log("You clicked me");
-    this.setState({ theShowPage: "<TictactoeComp />" });
+    // this.setState({ theShowPage: "<TictactoeComp />" });
   };
   renderIcon = () => {};
   render() {
