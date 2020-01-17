@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./images/logo.svg";
 import "./App.css";
 // import MyComponent from './components/MyComponent';
+import AccountComp from "./components/AccountApp";
 import TictactoeComp from "./components/TictactoeComponent";
 import SVGComponent from "./components/SVGComponent";
 import Welcome from "./components/Welcome";
@@ -14,7 +15,7 @@ class App extends React.Component {
     };
   }
 
-  handleIconClick = id => {
+  handleIconClick = (id) => {
     console.log(id);
     let showComponent;
 
@@ -22,9 +23,9 @@ class App extends React.Component {
       case "idTicTacToe":
         showComponent = <TictactoeComp />;
         break;
-      // case "idAccount":
-      //   showComponent = <AccountComponent />;
-      //   break;
+      case "idAccount":
+        showComponent = <AccountComp />;
+        break;
       // case "idCities":
       //   showComponent = <CityComponent />;
       //   break;
