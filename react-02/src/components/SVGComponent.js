@@ -1,6 +1,6 @@
 import React from "react";
 import imagereact from "../images/logo.svg";
-import imagePenguin from "../images/large_christmas-penguin.svg";
+// import imagePenguin from "../images/large_christmas-penguin.svg";
 import imageTictactoe from "../images/tic-tac-toe.svg";
 import imageAccount from "../images/icon_account.svg";
 import imageCities from "../images/icon_community.svg";
@@ -85,6 +85,7 @@ class SVGComponent extends React.Component {
           ({ src, id, alt, width, onClick = this.props.onClick, height }) => (
             <Icon
               src={src}
+              key={id}
               id={id}
               alt={alt}
               width={width}

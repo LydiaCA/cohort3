@@ -18,7 +18,7 @@ class Account {
 
 class AccountController {
   constructor() {
-    this.userAccounts = {};
+    this.userAccounts = [];
     this.nextKey = 0;
   }
 

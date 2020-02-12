@@ -20,9 +20,12 @@ class AccountCard extends React.Component {
   handleDeposit = () => {};
 
   render() {
+    console.log(this.props);
+    let { accountId, acount, initialBalance } = this.props;
     return (
       <div className="card">
-        <p> Account Name </p>
+        <p><b> {this.props.account}</b> </p>
+        <p><b> {this.props.initialBalance} </b></p>
         <input
           type="number"
           value={this.state.balance}

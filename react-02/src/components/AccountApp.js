@@ -14,6 +14,9 @@ class AccountApp extends React.Component {
   }
 
   addAccount = () => {
+    //minor validaition
+    //get values from inputs
+    //call pojo create handler
     this.accountController.addAccount(
       this.state.accountName,
       this.state.startingAmount
@@ -26,26 +29,32 @@ class AccountApp extends React.Component {
 
   renderCards = () => {
     let accountList = [];
-    for (let account in this.accountController.userAccounts) {
+    for (let account of this.accountController.userAccounts) {
       console.log(account);
       accountList.push(
-        <AccountCard key={account.accountId} account={account} />
+        <AccountCard
+        accountId={account.accountId}
+          account={account.account}
+          initialBalance={account.initialBalance}
+        />
       );
     }
-    console.log(this.accountController.userAccounts);
-    console.log(accountList);
+    // console.log(this.accountController.userAccounts);
+    // console.log(accountList);
     return accountList;
   };
 
   handleInputChange = (event) => {
+    //set input state
     this.setState({
       [event.target.name]: event.target.value
     });
+    console.log(event.target.value);
   };
 
   render() {
     return (
-      <div className="panel-primary">
+      <div className="panel-primary" id="idPrimary">
         <h1> Accounts </h1>
         <div className="left-panel" id="idLeftPanel">
           <b>Account Name: </b>{" "}
