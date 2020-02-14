@@ -33,7 +33,7 @@ class AccountApp extends React.Component {
       console.log(account);
       accountList.push(
         <AccountCard
-        accountId={account.accountId}
+          accountId={account.accountId}
           account={account.account}
           initialBalance={account.initialBalance}
         />
@@ -85,7 +85,7 @@ class AccountApp extends React.Component {
         </div>
         <div className="right-panel" id="idRightPanel">
           <p>
-            <b> Right-panel goels here</b>
+            <b> Account List </b>
           </p>
           {this.renderCards()}
         </div>

@@ -15,7 +15,6 @@ class AccountCard extends React.Component {
   };
 
   handleDeposit = () => {};
-
   handleWithdraw = () => {};
   handleDeposit = () => {};
 
@@ -24,17 +23,39 @@ class AccountCard extends React.Component {
     let { accountId, acount, initialBalance } = this.props;
     return (
       <div className="card">
-        <p><b> {this.props.account}</b> </p>
-        <p><b> {this.props.initialBalance} </b></p>
+        <p>
+          <b> Account Name: {this.props.account}</b>
+        </p>
+        <p>
+          <b> Initial Balance: {this.props.initialBalance} </b>
+        </p>
         <input
           type="number"
+          id="idBalance"
           value={this.state.balance}
           onChange={this.handleOnChange}
         />
-        <input type="buttton" value="Deposit" onClick={this.handleDeposit} />
-        <input type="buttton" value="Withdraw" onClick={this.handleWithdraw} />
-        <br />
-        <input type="buttton" value="Delete" onClick={this.handleDelete} />
+        <button
+          className="button"
+          type="button"
+          id="idDeposit"
+          value="Deposit"
+          onClick={this.handleDeposit}
+        ></button>
+        <button
+          className="button"
+          type="button"
+          id="idWithdraw"
+          value="Withdraw"
+          onClick={this.handleWithdraw}
+        ></button>
+        <button
+          className="button"
+          type="button"
+          id="idDelete"
+          value="Delete"
+          onClick={this.handleDelete}
+        ></button>
       </div>
     );
   }
