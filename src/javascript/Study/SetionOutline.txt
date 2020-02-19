@@ -1,0 +1,45 @@
+function sing(song) {
+    cconsole.long(a, b);
+}
+
+JAVASCRIPT LOGIAL OPERATORS
+--------------------
+&&
+||
+!
+
+JAVASCRIPT FUNCTIONS
+--------------------
+1. Arguments are what given to a function. e.g.
+alert("hi there!");
+2. FUNCTION DECLARATION
+    2.1 function name () {}
+    2.2 var a = function name() {} // Function Expression, call it use a();
+        e.g. 
+            var sayBye = function (){ //Anonymous Function
+                console.log("Bye");
+            }
+            sayBye();
+
+2. input (argument1, argument2) => execute functions => any return? Yes-Value, No-Undefined.
+3. In a function, return means exit the function.
+4. Inner Functions - functions can be assigned to variables.
+
+
+<!-- var a = function name() {} -->
+// 110 Function
+/*
+1. Using existing JavaScript functions, such as:
+alert();
+prompt);
+2. Write your own.
+
+
+
+// 110 Functions_parameters, arguments
+function multiply(a, b) { //in the function itself a, b are parameters.
+    return a*b;
+}
+
+var total = multiply(4, 5); //here 4, 5 are arguments.
+
