@@ -29,21 +29,13 @@ class AccountApp extends React.Component {
 
   renderCards = () => {
     let accountList = [];
-    let counter = 0;
     for (let account of this.accountController.userAccounts) {
-      counter++;
       console.log(account);
       accountList.push(
-        <AccountCard
-          key={counter}
-          accountId={account.accountId}
-          account={account.account}
-          initialBalance={account.initialBalance}
-        />
+        <AccountCard key={account.accountId} account={account} />
       );
     }
-    // console.log(this.accountController.userAccounts);
-    // console.log(accountList);
+
     return accountList;
   };
 

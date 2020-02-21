@@ -1,10 +1,11 @@
 import React from "react";
 
 class AccountCard extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      balance: ""
+      balanceInput: "",
+      currentBalance: this.props.account.currentBalance
     };
   }
 
@@ -14,7 +15,18 @@ class AccountCard extends React.Component {
     });
   };
 
-  handleDeposit = () => {};
+  handleDeposit = (e) => {
+    // Update current balance
+    // Rest the input to zero
+    this.setState({
+      currentBalance: this.props.account.deposit(this.state.balance)
+    });
+
+    // this.setState({
+    //   idBalance.value = "";
+    // })
+    // e.target.idBalance.value = "";
+  };
   handleWithdraw = () => {};
   handleDeposit = () => {};
 
@@ -24,10 +36,10 @@ class AccountCard extends React.Component {
     return (
       <div className="card">
         <p>
-          <b> Account Name: {this.props.account}</b>
+          <b> Account Name: {this.props.account.accountName}</b>
         </p>
         <p>
-          <b> Initial Balance: {this.props.initialBalance} </b>
+          <b> Current Balance: {this.props.account.currentBalance} </b>
         </p>
         <input
           type="number"
@@ -36,6 +48,7 @@ class AccountCard extends React.Component {
           onChange={this.handleOnChange}
         />
         <br />
+
         <button
           className="button"
           type="button"

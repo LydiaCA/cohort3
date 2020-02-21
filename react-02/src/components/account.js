@@ -2,15 +2,15 @@ class Account {
   constructor(accountId, accountName, startingBalance) {
     this.account = accountName;
     this.accountId = accountId;
-    this.initialBalance = startingBalance;
+    this.currentBalance = startingBalance;
   }
 
   deposit(amount) {
-    this.initialBalance = Number(amount) + Number(this.initialBalance);
+    this.currentBalance = Number(amount) + Number(this.currentBalance);
   }
 
   withdraw(amount) {
-    this.initialBalance = Number(this.initialBalance) - Number(amount);
+    this.currentBalance = Number(this.currentBalance) - Number(amount);
   }
 
   // balance() {}
@@ -36,7 +36,7 @@ class AccountController {
   totalBalance() {
     let sum = 0;
     for (const property in this.userAccounts) {
-      sum += property.initialBalance;
+      sum += property.currentBalance;
     }
     return sum;
   }
@@ -45,9 +45,9 @@ class AccountController {
     let highestAccount;
     Object.values(this.userAccounts).reduce(
       (highestBalance, currentAccount) => {
-        if (currentAccount.initialBalance > highestBalance) {
+        if (currentAccount.currentBalance > highestBalance) {
           highestAccount = currentAccount;
-          highestBalance = currentAccount.initialBalance;
+          highestBalance = currentAccount.currentBalance;
         }
       }
     );
@@ -57,9 +57,9 @@ class AccountController {
   lowestValueAccount() {
     let lowestAccount;
     Object.values(this.userAccounts).reduce((lowestBalance, currentAccount) => {
-      if (currentAccount.initialBalance < lowestBalance) {
+      if (currentAccount.currentBalance < lowestBalance) {
         lowestAccount = currentAccount;
-        lowestBalance = currentAccount.initialBalance;
+        lowestBalance = currentAccount.currentBalance;
       }
     });
     return lowestAccount;
