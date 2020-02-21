@@ -28,48 +28,11 @@
   color: #61dafb;
 }
 
-.rotate {
-  animation: rotation 8s infinite linear;
-}
-
-@keyframes rotation {
+@keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(359deg);
+    transform: rotate(360deg);
   }
 }
-
-.imagetest {
-  
-}
-
-#idPenguin1:hover {
-  animation: change-back infinite 0.7s;
-}
-#idPenguin2:hover {
-  animation: change-back infinite 0.7s;
-}
-#idPenguin3:hover {
-  animation: change-back infinite 0.7s;
-}
-#idPenguin4:hover {
-  animation: change-back infinite 0.7s;
-}
-#idPenguin5:hover {
-  animation: change-back infinite 0.7s;
-}
-#idPenguin6:hover {
-  animation: change-back infinite 0.7s;
-}
-
-@keyframes change-back {
-  0% {
-    background-color: #282c34;
-  }
-  100% {
-    background-color: white;
-  }
-}
-

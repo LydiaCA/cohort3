@@ -35,27 +35,31 @@ class AccountCard extends React.Component {
           value={this.state.balance}
           onChange={this.handleOnChange}
         />
+        <br />
         <button
           className="button"
           type="button"
           id="idDeposit"
-          value="Deposit"
           onClick={this.handleDeposit}
-        ></button>
+        >
+          Deposit
+        </button>
         <button
           className="button"
           type="button"
           id="idWithdraw"
-          value="Withdraw"
           onClick={this.handleWithdraw}
-        ></button>
+        >
+          Withdraw
+        </button>
         <button
           className="button"
           type="button"
           id="idDelete"
-          value="Delete"
           onClick={this.handleDelete}
-        ></button>
+        >
+          Delete
+        </button>
       </div>
     );
   }
